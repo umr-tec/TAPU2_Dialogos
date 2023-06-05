@@ -1,0 +1,17 @@
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\TAPU2_Dialogos.exe.config
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\TAPU2_Dialogos.exe
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\TAPU2_Dialogos.pdb
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.csproj.AssemblyReference.cache
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.Form1.resources
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.Properties.Resources.resources
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.csproj.GenerateResource.cache
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.csproj.CoreCompileInputs.cache
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.exe
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.pdb
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.Controls.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.Video.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.Imaging.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\bin\Debug\AForge.Math.dll
+C:\Users\ulise\source\repos\TAPU2_Dialogos\obj\Debug\TAPU2_Dialogos.Captura.resources
