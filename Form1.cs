@@ -16,13 +16,19 @@ namespace TAPU2_Dialogos
         FilterInfoCollection infoCollection;
         VideoCaptureDevice captureDevice;
         Captura capturaFoto;
+        //Se crea un mapa de bits (imagen) con la clase Bitmap
+        //En este objeto Bitmap se carga un frame del videoSourcePlayer1
+        //CAMBIO 1
+        //El objeto de tipo Bitmap se declara como global para poder ser usado en 
+        //cualquier metodo de la clase
+        Bitmap imagenPorGuardar;
 
         public Form1()
         {
             InitializeComponent();
             capturaFoto = new Captura();
-            capturaFoto.pbCaptura.BackgroundImageLayout = ImageLayout.Zoom;
-            capturaFoto.Show();
+            capturaFoto.pbCaptura.BackgroundImageLayout = ImageLayout.Stretch;
+            //capturaFoto.Show();
         }
 
         private void videoSourcePlayer1_Click(object sender, EventArgs e)
@@ -55,16 +61,27 @@ namespace TAPU2_Dialogos
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void documentPrintaPage(object sender, PrintPageEventArgs e)
-        {
+        {            
             //se hace una llamada local a una libreria Graphics, la cual permite crear graficos en un Form
             using (Graphics graphics = CreateGraphics())            
             {
-                using (Font f = new Font("Arial", 30, FontStyle.Italic))
+                try
                 {
-                    e.Graphics.DrawString("Ejemplo de imprimir 4°C", f, Brushes.Black, ClientRectangle.Width / 2, 100);
+                    using (Font f = new Font("Arial", 30, FontStyle.Italic))
+                    {
+                        e.Graphics.DrawString("Ejemplo de imprimir 4°C", f, Brushes.Black, ClientRectangle.Width / 2, 100);
+                    }
+                    //Se dibuja la imagen que se cargo en el PictureBox
+                    e.Graphics.DrawImage(capturaFoto.pbCaptura.Image, (ClientRectangle.Width / 2) - 150, ClientRectangle.Height / 2, 300, 300);
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Debes seleccionar una imagen");
+                }
+                
             }
         }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -97,20 +114,38 @@ namespace TAPU2_Dialogos
             //Se crea un objeto de tipo SaveFileDialog, este control también se úede agregar directamente del diseñador
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             //Se filtan los formatos que pueden ser guardardados, en este caso solo podrán guardarse archivos en formato jpg
-            saveFileDialog.Filter = "Imagen JPG |*.jpg";
+            saveFileDialog.Filter = "Imagen JPG |*.jpg";                                           
             //mostrar el fileDialog
             saveFileDialog.ShowDialog();
             //Guarfdar la imagen, antes de guardar con un if se valida que el archivo a gurdar tenga texto en el nombre
             if (saveFileDialog.FileName != null)
             {
-                //Se crea un mapa de bits (imagen) con la clase Bitmap
-                //En este objeto Bitmap se carga un frame del videoSourcePlayer1
-                Bitmap imagenPorGuardar = videoSourcePlayer1.GetCurrentVideoFrame();
+                imagenPorGuardar = videoSourcePlayer1.GetCurrentVideoFrame();
                 //Se guarda la imagen haciendo uso del saveFileDialog, y estableciendo un formato de guardado
                 //para ver la clase ImageFormat se debe agregar la libreria using System.Drawing.Imaging;
                 imagenPorGuardar.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
+                //capturaFoto.pbCaptura.Image = imagenPorGuardar;
                 imagenPorGuardar.Dispose();
+            }
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            //Se crea un objeto OpenFileDialog para abrir una imagen
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //se le establece un titulo al objeto openFileDialog
+            openFileDialog.Title = "Selecciona la imagen";
+            //se filtra el openFileDialog para que solo admita abrir archivos jpg
+            openFileDialog.Filter = "Imagenes (*.jpg)|*.jpg";
+            //se muestra el openFileDialog y el resultado se almacena en la variable result
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string archivo = openFileDialog.FileName;
+                capturaFoto.pbCaptura.ImageLocation = archivo;
+                capturaFoto.Show();
             }
         }
     }
 }
+

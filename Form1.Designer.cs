@@ -37,11 +37,13 @@ namespace TAPU2_Dialogos
             this.btnDetener = new System.Windows.Forms.Button();
             this.btnFoto = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
             this.gbOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbOpciones
             // 
+            this.gbOpciones.Controls.Add(this.btnAbrir);
             this.gbOpciones.Controls.Add(this.btnIniciar);
             this.gbOpciones.Controls.Add(this.btnDetener);
             this.gbOpciones.Controls.Add(this.btnFoto);
@@ -92,7 +94,7 @@ namespace TAPU2_Dialogos
             this.btnIniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnIniciar.FlatAppearance.BorderSize = 0;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIniciar.Location = new System.Drawing.Point(239, 52);
+            this.btnIniciar.Location = new System.Drawing.Point(144, 52);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(89, 93);
             this.btnIniciar.TabIndex = 8;
@@ -108,7 +110,7 @@ namespace TAPU2_Dialogos
             this.btnDetener.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnDetener.FlatAppearance.BorderSize = 0;
             this.btnDetener.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetener.Location = new System.Drawing.Point(334, 52);
+            this.btnDetener.Location = new System.Drawing.Point(239, 53);
             this.btnDetener.Name = "btnDetener";
             this.btnDetener.Size = new System.Drawing.Size(89, 93);
             this.btnDetener.TabIndex = 7;
@@ -124,7 +126,7 @@ namespace TAPU2_Dialogos
             this.btnFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnFoto.FlatAppearance.BorderSize = 0;
             this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoto.Location = new System.Drawing.Point(429, 52);
+            this.btnFoto.Location = new System.Drawing.Point(334, 53);
             this.btnFoto.Name = "btnFoto";
             this.btnFoto.Size = new System.Drawing.Size(89, 93);
             this.btnFoto.TabIndex = 6;
@@ -148,6 +150,22 @@ namespace TAPU2_Dialogos
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAbrir.BackgroundImage = global::TAPU2_Dialogos.Properties.Resources.folder_open_FILL0_wght400_GRAD0_opsz48;
+            this.btnAbrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAbrir.FlatAppearance.BorderSize = 0;
+            this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrir.Location = new System.Drawing.Point(429, 53);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(89, 93);
+            this.btnAbrir.TabIndex = 9;
+            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAbrir.UseVisualStyleBackColor = false;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // Form1
             // 
@@ -180,6 +198,7 @@ namespace TAPU2_Dialogos
         private System.Windows.Forms.Button btnDetener;
         private System.Windows.Forms.Button btnFoto;
         private AForge.Controls.VideoSourcePlayer videoSourcePlayer1;
+        private System.Windows.Forms.Button btnAbrir;
     }
 }
 
